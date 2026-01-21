@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nuestra Boda</title>
+  <title>Roberto & Pareja</title>
 
-  <!-- Tipografía elegante -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,45 +18,56 @@
   <!-- HERO -->
   <section class="hero">
     <div class="overlay"></div>
-    <div class="hero-content">
+
+    <div class="hero-content" data-aos="fade-up">
       <h1>Roberto & Pareja</h1>
       <p>Nos casamos</p>
       <span>30 · 09 · 2026</span>
     </div>
+
+    <!-- OLA SVG -->
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,40 960,80 1200,60 1440,30 L1440,120 L0,120 Z"></path>
+    </svg>
   </section>
 
   <!-- CUENTA ATRÁS -->
-  <section class="countdown">
+  <section class="countdown" data-aos="fade-up">
     <h2>Cuenta atrás</h2>
     <div id="timer">
-      <div><span id="days">0</span><small>Días</small></div>
-      <div><span id="hours">0</span><small>Horas</small></div>
-      <div><span id="minutes">0</span><small>Min</small></div>
-      <div><span id="seconds">0</span><small>Seg</small></div>
+      <div><span id="days"></span><small>Días</small></div>
+      <div><span id="hours"></span><small>Horas</small></div>
+      <div><span id="minutes"></span><small>Min</small></div>
+      <div><span id="seconds"></span><small>Seg</small></div>
     </div>
   </section>
 
+  <!-- OLA INVERTIDA -->
+  <svg class="wave inverted" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path d="M0,40 C240,0 480,120 720,80 960,40 1200,60 1440,90 L1440,0 L0,0 Z"></path>
+  </svg>
+
   <!-- HISTORIA -->
-  <section class="story">
+  <section class="story" data-aos="fade-up">
     <h2>Nuestra historia</h2>
     <p>
-      Todo comenzó en 2009 y desde entonces hemos compartido risas,
-      viajes y sueños. Hoy queremos celebrarlo con vosotros.
+      Todo comenzó en 2009. Desde entonces hemos construido una vida
+      llena de momentos inolvidables. Queremos celebrarlo con vosotros.
     </p>
   </section>
 
   <!-- EVENTO -->
-  <section class="event">
+  <section class="event" data-aos="fade-up">
     <h2>El gran día</h2>
-    <p><strong>📍 Lugar:</strong> Ciudad Real</p>
-    <p><strong>🕒 Hora:</strong> 18:00</p>
+    <p>📍 Ciudad Real</p>
+    <p>🕒 18:00</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>Con cariño ❤️ Roberto & Pareja</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
