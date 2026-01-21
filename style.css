@@ -25,14 +25,18 @@ body {
   overflow: hidden;
 }
 
+/* ⬇️ OVERLAY BIEN POSICIONADO */
 .overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
 }
 
+/* ⬇️ TEXTO SIEMPRE POR ENCIMA */
 .hero-content {
   position: relative;
+  z-index: 3;
   height: 100%;
   color: white;
   display: flex;
@@ -41,7 +45,6 @@ body {
   align-items: center;
   text-align: center;
   padding: 1rem;
-  z-index: 2;
 }
 
 .hero h1 {
@@ -67,7 +70,7 @@ body {
   width: 100%;
   height: 120px;
   fill: #fafafa;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -82,6 +85,7 @@ section {
   padding: 4rem 1.5rem;
   text-align: center;
   position: relative;
+  z-index: 1;
 }
 
 h2 {
@@ -103,8 +107,8 @@ h2 {
   gap: 1rem;
   max-width: 500px;
   margin: auto;
-  z-index: 2;
   position: relative;
+  z-index: 2;
 }
 
 #timer div {
