@@ -1,9 +1,15 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+/* BASE */
 body {
   font-family: 'Montserrat', sans-serif;
   background: #fafafa;
@@ -16,6 +22,7 @@ body {
   height: 100vh;
   background: url('https://images.unsplash.com/photo-1520857014576-2c4f4c972b57') center/cover no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
 .overlay {
@@ -34,11 +41,16 @@ body {
   align-items: center;
   text-align: center;
   padding: 1rem;
+  z-index: 2;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.hero p {
+  margin-top: 0.5rem;
 }
 
 .hero span {
@@ -51,20 +63,25 @@ body {
 .wave {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 120px;
   fill: #fafafa;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .wave.inverted {
+  top: 0;
+  bottom: auto;
   transform: rotate(180deg);
-  margin-top: -1px;
 }
 
-/* SECCIONES */
+/* SECTIONS */
 section {
   padding: 4rem 1.5rem;
   text-align: center;
+  position: relative;
 }
 
 h2 {
@@ -74,17 +91,25 @@ h2 {
 }
 
 /* COUNTDOWN */
+.countdown {
+  background: #fafafa;
+  position: relative;
+  overflow: hidden;
+}
+
 #timer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   max-width: 500px;
   margin: auto;
+  z-index: 2;
+  position: relative;
 }
 
 #timer div {
   background: white;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 1rem;
 }
 
@@ -94,6 +119,12 @@ h2 {
   font-weight: bold;
 }
 
+/* STORY & EVENT */
+.story,
+.event {
+  background: #fafafa;
+}
+
 /* FOOTER */
 footer {
   padding: 2rem 1rem;
@@ -101,7 +132,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* MOBILE EXTRA REFINEMENT */
+/* MOBILE */
 @media (max-width: 600px) {
   section {
     padding: 3rem 1rem;
