@@ -4,90 +4,108 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Invitación — Nuestra Boda</title>
+  <meta name="description" content="Invitación digital — desliza para ver detalles y confirmar asistencia (vista previa)." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Invitación digital de boda — desliza para ver detalles y confirmar asistencia.">
 </head>
 <body>
-  <main id="app" class="horiz-scroll" role="main" aria-label="Invitación de boda">
-    <!-- Section: Hero -->
-    <section class="panel hero" id="hero" aria-labelledby="hero-title">
-      <div class="content">
-        <h1 id="hero-title">Nos casamos</h1>
-        <p class="date">12 de Junio de 2026 • 17:00</p>
-        <button id="btn-rsvp-hero" class="cta" aria-controls="rsvp-form">Confirmar asistencia</button>
+  <header class="sr-only" aria-hidden="false">
+    <h1>Invitación digital — vista previa</h1>
+  </header>
+
+  <nav class="dots" aria-hidden="false" aria-label="Navegación de secciones" id="dots" role="navigation"></nav>
+
+  <main id="panels" class="horiz-scroll" role="main" aria-label="Invitación de boda">
+    <!-- Hero -->
+    <section class="panel hero" id="panel-hero" tabindex="0" aria-labelledby="hero-title">
+      <div class="inner">
+        <h2 id="hero-title" class="brand">Ana & Carlos</h2>
+        <p class="subtitle">12 de Junio de 2026 • 17:00</p>
+        <p class="lead">Nos encantará contar contigo en este día tan especial.</p>
+        <div class="actions">
+          <button id="btn-rsvp" class="btn large" aria-controls="rsvp-form">RSVP</button>
+          <a class="btn ghost" href="#panel-details">Detalles</a>
+        </div>
       </div>
     </section>
 
-    <!-- Section: Detalles -->
-    <section class="panel details" id="details" aria-labelledby="details-title">
-      <div class="content">
-        <h2 id="details-title">Detalles</h2>
-        <p>Ceremonia y recepción en Finca La Esperanza. Código de vestimenta: formal elegante.</p>
-        <ul>
+    <!-- Details -->
+    <section class="panel details" id="panel-details" tabindex="0" aria-labelledby="details-title">
+      <div class="inner">
+        <h3 id="details-title">Detalles</h3>
+        <p class="muted">Ceremonia y recepción en Finca La Esperanza. Vestimenta: formal elegante.</p>
+        <ul class="info">
           <li><strong>Dirección:</strong> Calle Ejemplo 123</li>
           <li><strong>Hora ceremonia:</strong> 17:00</li>
-          <li><strong>Recepción:</strong> A partir de 19:00</li>
+          <li><strong>Recepción:</strong> 19:00</li>
         </ul>
-      </div>
-    </section>
-
-    <!-- Section: Mapa -->
-    <section class="panel map" id="map" aria-labelledby="map-title">
-      <div class="content">
-        <h2 id="map-title">Cómo llegar</h2>
-        <p>Ver mapa y opciones de transporte.</p>
-        <!-- You can replace the iframe src with your Google Maps embed -->
-        <div class="map-embed" aria-hidden="false">
-          <iframe src="https://www.google.com/maps?q=40.4168,-3.7038&z=15&output=embed" title="Mapa de la ubicación" loading="lazy"></iframe>
+        <div class="mini-actions">
+          <a class="btn" href="#panel-map">Ver mapa</a>
+          <a class="btn" href="#panel-gallery">Galería</a>
         </div>
       </div>
     </section>
 
-    <!-- Section: Galería -->
-    <section class="panel gallery" id="gallery" aria-labelledby="gallery-title">
-      <div class="content">
-        <h2 id="gallery-title">Galería</h2>
+    <!-- Map -->
+    <section class="panel map" id="panel-map" tabindex="0" aria-labelledby="map-title">
+      <div class="inner">
+        <h3 id="map-title">Cómo llegar</h3>
+        <p class="muted">Pincha el mapa para abrir en Google Maps.</p>
+        <div class="map-embed" role="region" aria-label="Mapa de la ubicación">
+          <a class="map-link" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+            <img src="https://picsum.photos/seed/map/1200/700" alt="Vista previa del mapa; abrir en Google Maps" loading="lazy">
+            <span class="map-pin">Abrir mapa</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="panel gallery" id="panel-gallery" tabindex="0" aria-labelledby="gallery-title">
+      <div class="inner">
+        <h3 id="gallery-title">Galería</h3>
         <div class="photos" role="list">
-          <img src="https://picsum.photos/seed/1/800/500" alt="Foto 1" role="listitem">
-          <img src="https://picsum.photos/seed/2/800/500" alt="Foto 2" role="listitem">
-          <img src="https://picsum.photos/seed/3/800/500" alt="Foto 3" role="listitem">
+          <img src="https://picsum.photos/seed/1/800/500" alt="Foto 1" loading="lazy" role="listitem">
+          <img src="https://picsum.photos/seed/2/800/500" alt="Foto 2" loading="lazy" role="listitem">
+          <img src="https://picsum.photos/seed/3/800/500" alt="Foto 3" loading="lazy" role="listitem">
         </div>
       </div>
     </section>
 
-    <!-- Section: RSVP -->
-    <section class="panel rsvp" id="rsvp" aria-labelledby="rsvp-title">
-      <div class="content">
-        <h2 id="rsvp-title">Confirmar asistencia</h2>
-        <form id="rsvp-form" class="rsvp-form" aria-describedby="rsvp-desc">
-          <p id="rsvp-desc">Por favor completa la información. Responder antes del 1 de Junio.</p>
+    <!-- RSVP -->
+    <section class="panel rsvp" id="panel-rsvp" tabindex="0" aria-labelledby="rsvp-title">
+      <div class="inner">
+        <h3 id="rsvp-title">Confirmar asistencia</h3>
+        <p class="muted">Esta es una vista previa local: el formulario no almacena datos en ningún servidor.</p>
+
+        <form id="rsvp-form" class="form" aria-describedby="rsvp-desc" novalidate>
+          <p id="rsvp-desc" class="sr-only">Rellena tu nombre y correo y pulsa enviar (vista previa).</p>
 
           <label for="name">Nombre completo</label>
-          <input id="name" name="name" type="text" required autocomplete="name" />
+          <input id="name" name="name" type="text" autocomplete="name" required>
 
           <label for="email">Correo electrónico</label>
-          <input id="email" name="email" type="email" autocomplete="email" />
-
-          <label for="guests">Número de invitados</label>
-          <input id="guests" name="guests" type="number" min="1" max="10" value="1" required />
-
-          <fieldset>
-            <legend>¿Asistirás?</legend>
-            <label><input type="radio" name="attending" value="yes" checked> Sí</label>
-            <label><input type="radio" name="attending" value="no"> No</label>
-          </fieldset>
-
-          <label for="message">Mensaje (opcional)</label>
-          <textarea id="message" name="message" rows="3"></textarea>
+          <input id="email" name="email" type="email" autocomplete="email">
 
           <div class="form-actions">
-            <button type="submit" id="submit" class="cta">Enviar respuesta</button>
-            <div id="status" role="status" aria-live="polite"></div>
+            <button type="submit" class="btn large">Enviar respuesta</button>
+            <button type="button" id="btn-reset" class="btn ghost">Limpiar</button>
           </div>
+
+          <div id="form-status" role="status" aria-live="polite" class="status" hidden></div>
         </form>
       </div>
     </section>
   </main>
+
+  <!-- Confirmation overlay -->
+  <div id="confirm" class="confirm" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="confirm-title">
+    <div class="confirm-card" role="document">
+      <h4 id="confirm-title">Gracias</h4>
+      <p>Esta es una vista previa. Tu respuesta se ha procesado solo localmente en esta sesión (no se almacena).</p>
+      <button id="confirm-close" class="btn">Cerrar</button>
+    </div>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
