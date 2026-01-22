@@ -1,76 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roberto & Pareja</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Invitación — Nuestra Boda</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Invitación digital de boda — desliza para ver detalles y confirmar asistencia.">
 </head>
 <body>
+  <main id="app" class="horiz-scroll" role="main" aria-label="Invitación de boda">
+    <!-- Section: Hero -->
+    <section class="panel hero" id="hero" aria-labelledby="hero-title">
+      <div class="content">
+        <h1 id="hero-title">Nos casamos</h1>
+        <p class="date">12 de Junio de 2026 • 17:00</p>
+        <button id="btn-rsvp-hero" class="cta" aria-controls="rsvp-form">Confirmar asistencia</button>
+      </div>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="overlay"></div>
+    <!-- Section: Detalles -->
+    <section class="panel details" id="details" aria-labelledby="details-title">
+      <div class="content">
+        <h2 id="details-title">Detalles</h2>
+        <p>Ceremonia y recepción en Finca La Esperanza. Código de vestimenta: formal elegante.</p>
+        <ul>
+          <li><strong>Dirección:</strong> Calle Ejemplo 123</li>
+          <li><strong>Hora ceremonia:</strong> 17:00</li>
+          <li><strong>Recepción:</strong> A partir de 19:00</li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="hero-content" data-aos="fade-up">
-      <h1>Roberto & Pareja</h1>
-      <p>Nos casamos</p>
-      <span>30 · 09 · 2026</span>
-    </div>
+    <!-- Section: Mapa -->
+    <section class="panel map" id="map" aria-labelledby="map-title">
+      <div class="content">
+        <h2 id="map-title">Cómo llegar</h2>
+        <p>Ver mapa y opciones de transporte.</p>
+        <!-- You can replace the iframe src with your Google Maps embed -->
+        <div class="map-embed" aria-hidden="false">
+          <iframe src="https://www.google.com/maps?q=40.4168,-3.7038&z=15&output=embed" title="Mapa de la ubicación" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
 
-    <!-- Wave bottom -->
-    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,60 C240,120 480,0 720,40 960,80 1200,60 1440,30 L1440,120 L0,120 Z"></path>
-    </svg>
-  </section>
+    <!-- Section: Galería -->
+    <section class="panel gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="content">
+        <h2 id="gallery-title">Galería</h2>
+        <div class="photos" role="list">
+          <img src="https://picsum.photos/seed/1/800/500" alt="Foto 1" role="listitem">
+          <img src="https://picsum.photos/seed/2/800/500" alt="Foto 2" role="listitem">
+          <img src="https://picsum.photos/seed/3/800/500" alt="Foto 3" role="listitem">
+        </div>
+      </div>
+    </section>
 
-  <!-- COUNTDOWN -->
-  <section class="countdown" data-aos="fade-up">
-    <h2>Cuenta atrás</h2>
+    <!-- Section: RSVP -->
+    <section class="panel rsvp" id="rsvp" aria-labelledby="rsvp-title">
+      <div class="content">
+        <h2 id="rsvp-title">Confirmar asistencia</h2>
+        <form id="rsvp-form" class="rsvp-form" aria-describedby="rsvp-desc">
+          <p id="rsvp-desc">Por favor completa la información. Responder antes del 1 de Junio.</p>
 
-    <div id="timer">
-      <div><span id="days"></span><small>Días</small></div>
-      <div><span id="hours"></span><small>Horas</small></div>
-      <div><span id="minutes"></span><small>Min</small></div>
-      <div><span id="seconds"></span><small>Seg</small></div>
-    </div>
+          <label for="name">Nombre completo</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
 
-    <!-- Wave top -->
-    <svg class="wave inverted" viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0,40 C240,0 480,120 720,80 960,40 1200,60 1440,90 L1440,0 L0,0 Z"></path>
-    </svg>
-  </section>
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" autocomplete="email" />
 
-  <!-- STORY -->
-  <section class="story" data-aos="fade-up">
-    <h2>Nuestra historia</h2>
-    <p>
-      Todo comenzó en 2009. Desde entonces hemos compartido momentos
-      inolvidables y queremos celebrarlo con vosotros.
-    </p>
-  </section>
+          <label for="guests">Número de invitados</label>
+          <input id="guests" name="guests" type="number" min="1" max="10" value="1" required />
 
-  <!-- EVENT -->
-  <section class="event" data-aos="fade-up">
-    <h2>El gran día</h2>
-    <p>📍 Ciudad Real</p>
-    <p>🕒 18:00</p>
-  </section>
+          <fieldset>
+            <legend>¿Asistirás?</legend>
+            <label><input type="radio" name="attending" value="yes" checked> Sí</label>
+            <label><input type="radio" name="attending" value="no"> No</label>
+          </fieldset>
 
-  <footer>
-    <p>Con cariño ❤️ Roberto & Pareja</p>
-  </footer>
+          <label for="message">Mensaje (opcional)</label>
+          <textarea id="message" name="message" rows="3"></textarea>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="script.js"></script>
+          <div class="form-actions">
+            <button type="submit" id="submit" class="cta">Enviar respuesta</button>
+            <div id="status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
+  <script src="script.js" defer></script>
 </body>
 </html>
