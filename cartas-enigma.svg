@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" role="img" aria-labelledby="title desc">
+  <title id="title">Cinco de picas, nueve de diamantes y ocho de tréboles</title>
+  <desc id="desc">Tres naipes con los símbolos distribuidos como en cartas reales.</desc>
+  <g fill="#F8F4EC" stroke="#6F7D66" stroke-width="3">
+    <rect x="40" y="18" width="160" height="262" rx="10"/>
+    <rect x="220" y="18" width="160" height="262" rx="10"/>
+    <rect x="400" y="18" width="160" height="262" rx="10"/>
+  </g>
+  <g font-family="Georgia, serif" text-anchor="middle">
+    <g fill="#45413C">
+      <text x="63" y="56" font-size="27">5</text><text x="177" y="253" font-size="27" transform="rotate(180 177 253)">5</text>
+      <g font-size="37"><text x="83" y="90">♠</text><text x="157" y="90">♠</text><text x="120" y="158">♠</text><text x="83" y="226">♠</text><text x="157" y="226">♠</text></g>
+    </g>
+    <g fill="#6F7D66">
+      <text x="243" y="56" font-size="27">9</text><text x="357" y="253" font-size="27" transform="rotate(180 357 253)">9</text>
+      <g font-size="35"><text x="260" y="77">♦</text><text x="300" y="77">♦</text><text x="340" y="77">♦</text><text x="260" y="158">♦</text><text x="300" y="158">♦</text><text x="340" y="158">♦</text><text x="260" y="239">♦</text><text x="300" y="239">♦</text><text x="340" y="239">♦</text></g>
+    </g>
+    <g fill="#45413C">
+      <text x="423" y="56" font-size="27">8</text><text x="537" y="253" font-size="27" transform="rotate(180 537 253)">8</text>
+      <g font-size="35"><text x="440" y="77">♣</text><text x="480" y="77">♣</text><text x="520" y="77">♣</text><text x="440" y="158">♣</text><text x="520" y="158">♣</text><text x="440" y="239">♣</text><text x="480" y="239">♣</text><text x="520" y="239">♣</text></g>
+    </g>
+  </g>
+</svg>

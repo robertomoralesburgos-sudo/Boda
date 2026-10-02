@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F8F4EC">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="Roberto y Lidia · 3 de octubre de 2026">
+  <title>Roberto &amp; Lidia · 03.10.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root { --ivory:#F8F4EC; --ink:#45413C; --muted:#3D3A36; --sage:#6F7D66; --line:rgba(111,125,102,.32); --display:"Great Vibes",cursive; --ampersand:"Parisienne",cursive; --serif:"Cormorant Garamond",Georgia,serif; --body:"Libre Baskerville",Georgia,serif; }
+    * { box-sizing:border-box; }
+    html,body { min-height:100%; }
+    body { margin:0; background:#e9e0d3; color:var(--ink); font-family:var(--body); }
+    body.enigma-open { overflow:hidden; }
+    main { display:flex; width:min(100%,560px); min-height:100svh; margin:auto; overflow:hidden; background:var(--ivory); box-shadow:0 12px 40px rgba(55,39,22,.12); }
+    .hero { position:relative; display:flex; flex:1; flex-direction:column; align-items:center; justify-content:center; padding:max(48px,env(safe-area-inset-top)) clamp(25px,8vw,48px) max(48px,env(safe-area-inset-bottom)); text-align:center; }
+    .hero-logo { width:min(54.4vw,204px); height:auto; margin:0 0 28px; }
+    h1 { margin:0; font:400 clamp(3.5rem,14vw,5rem) var(--display); letter-spacing:0; }
+    h1 b { color:var(--sage); font:400 .98em/.75 var(--ampersand); }
+    .bride-name { display:inline-block; transform:translateY(.15em); }
+    .date { position:relative; margin:22px 0 0; padding:13px 28px 12px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); color:var(--sage); font:500 1.02rem/1.5 var(--serif); letter-spacing:.16em; text-transform:uppercase; }
+    .enigma-launch { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:0; margin-top:31px; padding:15px 21px 14px; border:1px solid var(--sage); border-radius:999px; color:var(--ivory); background:var(--sage); box-shadow:0 7px 17px rgba(61,58,54,.16); font:700 .68rem/1 var(--body); letter-spacing:.14em; text-transform:uppercase; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .enigma-launch:hover { background:#5d6b55; box-shadow:0 10px 20px rgba(61,58,54,.22); transform:translateY(-2px); }
+    .enigma-symbol { font:400 1.22rem/.65 var(--serif); letter-spacing:0; }
+    .enigma-modal[hidden] { display:none; }
+    .enigma-modal { position:fixed; z-index:10; inset:0; display:grid; place-items:center; padding:18px; }
+    .enigma-backdrop { position:absolute; inset:0; background:rgba(61,58,54,.46); backdrop-filter:blur(3px); }
+    .enigma-panel { position:relative; z-index:1; width:min(100%,450px); max-height:min(88svh,700px); overflow-y:auto; padding:43px 27px 30px; background:var(--ivory); box-shadow:0 18px 46px rgba(55,39,22,.25); text-align:center; }
+    .enigma-close { position:absolute; top:12px; right:12px; display:grid; place-items:center; width:34px; min-height:34px; margin:0; padding:0 0 2px; border:1px solid var(--line); border-radius:50%; color:var(--sage); background:transparent; font:400 1.45rem/1 var(--serif); cursor:pointer; }
+    .enigma-close:hover { background:rgba(111,125,102,.08); }
+    .enigma-panel h2 { margin:0; font:italic 500 clamp(2.2rem,10vw,3rem)/.95 var(--serif); }
+    .enigma-copy { max-width:31ch; margin:27px auto 0; color:var(--muted); font:.88rem/1.85 var(--body); }
+    .enigma-divider { width:47px; height:1px; margin:28px auto; background:var(--sage); }
+    .enigma-enter { display:inline-block; min-height:0; margin:0; border:1px solid var(--sage); padding:13px 18px 12px; color:var(--sage); background:transparent; font:700 .62rem/1 var(--body); letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:.2s ease; }
+    .enigma-enter:hover { background:var(--sage); color:var(--ivory); }
+    .enigma-status { min-height:22px; margin:20px 0 0; color:var(--sage); font:.72rem/1.55 var(--body); }
+    @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto !important; transition:none !important; } }
+    .riddle-stage[hidden], .enigma-intro[hidden], .riddle-solution[hidden], .riddle-final[hidden] { display:none; }.riddle-stage { position:relative; }.riddle-progress { position:relative; z-index:0; display:inline-block; margin:0 0 24px; color:var(--ink); font:italic 500 clamp(2.15rem,10vw,3.05rem)/1 var(--serif); letter-spacing:-.035em; }.riddle-progress::after { content:""; position:absolute; z-index:-1; right:-10px; bottom:5px; left:-6px; height:9px; background:rgba(111,125,102,.23); }.riddle-question { margin:0; color:var(--ink); font:italic 500 1.55rem/1.28 var(--serif); }.riddle-series { display:block; margin-top:20px; color:var(--sage); font:500 clamp(1.02rem,4.7vw,1.32rem)/1 var(--serif); letter-spacing:.14em; white-space:nowrap; }.riddle-diagram { display:block; width:100%; max-width:330px; height:auto; margin:21px auto 0; }.riddle-answer { width:100%; min-height:47px; margin-top:24px; border:1px solid var(--line); border-radius:8px; padding:12px; color:var(--ink); background:transparent; font:400 .82rem var(--body); outline:0; }.riddle-answer:focus { border-color:var(--sage); }.riddle-submit { display:inline-block; min-height:0; margin-top:12px; border:1px solid var(--sage); padding:13px 18px 12px; color:var(--sage); background:transparent; font:700 .62rem/1 var(--body); letter-spacing:.15em; text-transform:uppercase; cursor:pointer; transition:.2s ease; }.riddle-submit:hover { background:var(--sage); color:var(--ivory); }.riddle-feedback { min-height:24px; margin:19px 0 0; color:var(--sage); font:.75rem/1.55 var(--body); }.riddle-feedback.is-checking { animation:riddle-checking .65s ease-in-out infinite alternate; }.riddle-solution { margin:20px auto 0; padding:20px 12px 2px; border-top:1px solid var(--line); animation:solution-reveal .55s ease both; }.riddle-solution p { max-width:29ch; margin:0 auto; color:var(--muted); font:.8rem/1.75 var(--body); }.riddle-key-letters { margin:13px 0 0; color:var(--sage); font:italic 600 clamp(2rem,10vw,2.9rem)/1 var(--serif); letter-spacing:.18em; text-indent:.18em; }.riddle-key-form { display:flex; gap:8px; margin:18px auto 0; }.riddle-key-input { min-width:0; flex:1; min-height:45px; border:1px solid var(--line); border-radius:8px; padding:10px; color:var(--ink); background:transparent; font:400 .8rem var(--body); outline:0; text-align:center; text-transform:uppercase; }.riddle-key-input:focus { border-color:var(--sage); }.riddle-key-submit { border:1px solid var(--sage); padding:10px 12px; color:var(--ivory); background:var(--sage); font:700 .59rem/1 var(--body); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }.riddle-key-feedback { min-height:21px; margin:11px 0 0; color:var(--sage); font:.72rem/1.5 var(--body); }.riddle-final { padding-top:4px; animation:solution-reveal .55s ease both; }.riddle-code { margin:13px 0 0; color:var(--sage); font:italic 600 clamp(2.3rem,11vw,3.25rem)/1 var(--serif); letter-spacing:.16em; text-indent:.16em; }.riddle-navigation { display:flex; align-items:center; justify-content:center; gap:18px; margin:19px 0 0; }.riddle-nav { display:grid; place-items:center; width:39px; height:39px; border:1px solid var(--line); border-radius:50%; color:var(--sage); background:transparent; font:400 1.65rem/.8 var(--serif); cursor:pointer; transition:transform .2s ease, color .2s ease, background .2s ease; }.riddle-nav:not(:disabled):hover { transform:translateY(-2px); color:var(--ivory); background:var(--sage); }.riddle-nav:disabled { opacity:.28; cursor:default; } @keyframes riddle-checking { to { opacity:.35; transform:translateY(-2px); } } @keyframes solution-reveal { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    .riddle-board[hidden], .riddle-detail[hidden], .riddle-final[hidden] { display:none; }
+    .riddle-board-title { position:relative; z-index:0; display:inline-block; margin:0; color:var(--ink); font:italic 500 clamp(2.15rem,10vw,3.05rem)/1 var(--serif); letter-spacing:-.035em; }
+    .riddle-board-title::after { content:""; position:absolute; z-index:-1; right:-10px; bottom:5px; left:-6px; height:9px; background:rgba(111,125,102,.23); }
+    .riddle-combination-status { margin:15px 0 19px; color:var(--sage); font:italic 600 clamp(1.7rem,8vw,2.25rem)/1 var(--serif); letter-spacing:.14em; text-indent:.14em; }
+    .riddle-board-copy { margin:18px auto 23px; color:var(--muted); font:.77rem/1.7 var(--body); }
+    .riddle-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
+    .riddle-card { min-height:91px; border:1px solid var(--line); padding:12px 9px; color:var(--ink); background:transparent; font:400 1rem/1.15 var(--serif); cursor:pointer; transition:transform .2s ease, background .2s ease, color .2s ease; }
+    .riddle-card:not(:disabled):hover { transform:translateY(-2px); background:rgba(111,125,102,.08); }
+    .riddle-card strong { display:block; color:var(--sage); font:italic 600 1.27rem/1 var(--serif); }
+    .riddle-card span { display:block; margin-top:8px; font:.56rem/1.35 var(--body); letter-spacing:.08em; text-transform:uppercase; }
+    .riddle-card.is-solved { border-color:var(--sage); background:rgba(111,125,102,.09); }.riddle-card.is-solved span { color:var(--sage); }.riddle-card:disabled { color:rgba(69,65,60,.45); cursor:default; }.riddle-card:disabled strong { color:rgba(111,125,102,.46); }
+    .riddle-milestone { margin:20px auto 0; padding:15px 12px; border-top:1px solid var(--line); color:var(--sage); font:.75rem/1.7 var(--body); animation:solution-reveal .55s ease both; }.riddle-milestone b { display:block; margin-top:4px; font:italic 600 2rem/1 var(--serif); letter-spacing:.14em; text-indent:.14em; }
+    .riddle-back { display:inline-flex; align-items:center; gap:7px; margin:0 0 23px; border:0; padding:0; color:var(--sage); background:transparent; font:700 .61rem/1 var(--body); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; }.riddle-back:hover { color:var(--ink); }
+    .riddle-return { display:inline-flex; align-items:center; gap:7px; margin:17px 0 0; border:1px solid var(--sage); padding:11px 14px 10px; color:var(--sage); background:transparent; font:700 .59rem/1 var(--body); letter-spacing:.1em; text-transform:uppercase; cursor:pointer; transition:.2s ease; }.riddle-return:hover { color:var(--ivory); background:var(--sage); }
+    .riddle-detail-title { position:relative; z-index:0; display:inline-block; margin:0 0 24px; color:var(--ink); font:italic 500 clamp(2.15rem,10vw,3.05rem)/1 var(--serif); letter-spacing:-.035em; }.riddle-detail-title::after { content:""; position:absolute; z-index:-1; right:-10px; bottom:5px; left:-6px; height:9px; background:rgba(111,125,102,.23); }
+    .riddle-final { padding:11px 4px 4px; animation:solution-reveal .55s ease both; }.riddle-final h3 { margin:0; font:italic 500 clamp(2.1rem,10vw,3rem)/1 var(--serif); }.riddle-final p { max-width:29ch; margin:22px auto 0; color:var(--muted); font:.82rem/1.75 var(--body); }.riddle-code { margin:16px 0 0; color:var(--sage); font:italic 600 clamp(2.3rem,11vw,3.25rem)/1 var(--serif); letter-spacing:.16em; text-indent:.16em; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <img class="hero-logo" src="logo.PNG" alt="Monograma de Roberto y Lidia">
+      <h1>Roberto<br><b>&amp;</b><br><span class="bride-name">Lidia</span></h1>
+      <p class="date">03 · Octubre · 2026</p>
+      <button class="enigma-launch" id="enigma-launch" type="button"><span class="enigma-symbol" aria-hidden="true">✦</span> Resuelve el enigma</button>
+    </section>
+  </main>
+  <div class="enigma-modal" id="enigma-modal" hidden role="dialog" aria-modal="true" aria-labelledby="enigma-title">
+    <div class="enigma-backdrop" data-enigma-close></div>
+    <section class="enigma-panel">
+      <button class="enigma-close" type="button" aria-label="Cerrar" data-enigma-close>×</button>
+      <div class="enigma-intro" id="enigma-intro"><h2 id="enigma-title">El enigma</h2><p class="enigma-copy">Si has llegado hasta aquí es porque has olvidado la combinación secreta. Para recuperarla, deberás superar una serie de retos en los que tu capacidad para resolver acertijos será esencial. ¿Serás capaz de descifrarlos todos?</p><div class="enigma-divider" aria-hidden="true"></div><button class="enigma-enter" id="enigma-enter" type="button">Entrar</button></div>
+      <div class="riddle-stage" id="riddle-stage" hidden>
+        <section class="riddle-board" id="riddle-board">
+          <p class="riddle-board-title">Retos</p>
+          <p class="riddle-combination-status" id="riddle-combination-status"># · # · # · #</p>
+          <p class="riddle-board-copy">Elige un reto. Cada respuesta correcta te acerca a recuperar la combinación secreta.</p>
+          <div class="riddle-grid" id="riddle-grid"></div>
+          <div class="riddle-milestone" id="riddle-milestone" hidden aria-live="polite"></div>
+        </section>
+        <section class="riddle-detail" id="riddle-detail" hidden>
+          <p class="riddle-detail-title" id="riddle-progress">Reto 1</p>
+          <p class="riddle-question" id="riddle-question"></p>
+          <input class="riddle-answer" id="riddle-answer" type="text" autocomplete="off" placeholder="Escribe tu respuesta">
+          <button class="riddle-submit" id="riddle-submit" type="button">Comprobar respuesta</button>
+          <button class="riddle-return" id="riddle-back" type="button">← Ver los retos</button>
+          <p class="riddle-feedback" id="riddle-feedback" aria-live="polite"></p>
+        </section>
+        <section class="riddle-final" id="riddle-final" hidden>
+          <h3>¡Combinación recuperada!</h3>
+          <p>Has resuelto todos los enigmas y has encontrado las cuatro cifras. La caja ya puede abrirse:</p>
+          <div class="riddle-code" aria-label="6 7 3 1">6 · 7 · 3 · 1</div>
+          <p>¡Enhorabuena! Has demostrado ingenio y sagacidad. El regalo ya es tuyo.</p>
+          <button class="riddle-back" id="riddle-final-back" type="button">← Ver los retos</button>
+        </section>
+      </div>
+    </section>
+  </div>
+  <script>
+    const enigmaModal = document.querySelector('#enigma-modal');
+    const enigmaLaunch = document.querySelector('#enigma-launch');
+    const closeEnigma = () => { enigmaModal.hidden = true; document.body.classList.remove('enigma-open'); enigmaLaunch.focus(); };
+    enigmaLaunch.addEventListener('click', () => { enigmaModal.hidden = false; document.body.classList.add('enigma-open'); document.querySelector('#enigma-enter').focus(); });
+    enigmaModal.querySelectorAll('[data-enigma-close]').forEach(element => element.addEventListener('click', closeEnigma));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && !enigmaModal.hidden) closeEnigma(); });
+    const enigmaIntro = document.querySelector('#enigma-intro');
+    const riddleStage = document.querySelector('#riddle-stage');
+    const riddleBoard = document.querySelector('#riddle-board');
+    const riddleDetail = document.querySelector('#riddle-detail');
+    const riddleGrid = document.querySelector('#riddle-grid');
+    const riddleMilestone = document.querySelector('#riddle-milestone');
+    const riddleCombinationStatus = document.querySelector('#riddle-combination-status');
+    const riddleTitle = document.querySelector('#riddle-progress');
+    const riddleQuestion = document.querySelector('#riddle-question');
+    const riddleAnswer = document.querySelector('#riddle-answer');
+    const riddleSubmit = document.querySelector('#riddle-submit');
+    const riddleFeedback = document.querySelector('#riddle-feedback');
+    const riddleFinal = document.querySelector('#riddle-final');
+    const riddleBack = document.querySelector('#riddle-back');
+    const riddleQuestions = [
+      { question:'Solo existo donde hay luz, pero si me da directamente, desaparezco. ¿Qué soy?', answers:['sombra','la sombra','una sombra','mi sombra','la propia sombra','sombra propia','sombra proyectada','la sombra proyectada','una sombra proyectada'] },
+      { question:'¿Qué letra va al final de esta serie?', series:'E F M A M J J A S O N _', answers:['d','la d','letra d','la letra d','d de diciembre','la d de diciembre','diciembre','mes de diciembre'] },
+      { question:'¿Qué letra falta en la cara del cubo que tiene un interrogante?', diagram:'cubo-abierto.svg', answers:['z','la z','letra z','la letra z','zeta','la zeta','letra zeta','la letra zeta','z de diez'] },
+      { question:'Aquí hay picas, diamantes y tréboles. ¿Qué carta de corazones falta en la imagen?', diagram:'cartas-enigma.svg', answers:['9 de corazones','nueve de corazones','el 9 de corazones','el nueve de corazones','9 corazones','nueve corazones','corazones 9','corazones nueve'] },
+      { question:'Un lago tiene un nenúfar mágico que duplica su tamaño cada día. Si el día 24 el lago se llena completamente, ¿qué día estará cubierto por la mitad?', answers:['23','dia 23','el dia 23','dia veintitres','el dia veintitres','veintitres','veintitres dia','el veintitres'] },
+      { question:'Hay un caballo entre dos caballos, un caballo detrás de un caballo y un caballo delante de otro caballo. ¿De cuántos caballos estamos hablando?', answers:['3','tres','3 caballos','tres caballos','de 3 caballos','de tres caballos','son 3 caballos','son tres caballos'] },
+      { question:'Usando solo dos letras completarás la palabra. ¿Qué letras son?', series:'_ EC _ _ _ ID _', answers:['r y o','o y r','r o','o r','r y la o','o y la r','las letras r y o','las letras o y r','r y o recorrido','o y r recorrido'] },
+      { question:'Si la vaca regala una botella de cava y el gato viste con una toga, ¿qué animal derribará el bolo?', answers:['lobo','el lobo','un lobo','al lobo','es el lobo','seria el lobo','sería el lobo'] },
+      { question:'Partiendo de una de las letras de la tabla y pasando por todas las demás se forma una palabra de 12 letras que te dejará con la boca abierta. ¿Cuál es?', diagram:'tabla-sorprendente.svg', diagramAlt:'Tabla de letras: R E N E; P S D T; R O E N', answers:['sorprendente','la palabra sorprendente','es sorprendente','sorprendente palabra'] },
+      { question:'Si adivinas la lógica de esta secuencia, conocerás los dos últimos dígitos de la combinación secreta. ¿Cuáles son?', series:'0  5  4  2  9  8  6  7  _  _', answers:['3 1','31','3 y 1','3 e 1','3, 1','3,1','3-1','tres uno','tres y uno','tres e uno','tres, uno','los numeros 3 1','los números 3 1'] }
+    ];
+    let currentRiddle = null;
+    const solvedRiddles = new Set();
+    const normaliseAnswer = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+    const tenthUnlocked = () => [...Array(9).keys()].every(index => solvedRiddles.has(index));
+    const updateCombinationStatus = () => {
+      const digits = [solvedRiddles.size >= 3 ? '6' : '#', solvedRiddles.size >= 9 ? '7' : '#', solvedRiddles.has(9) ? '3' : '#', solvedRiddles.has(9) ? '1' : '#'];
+      riddleCombinationStatus.textContent = digits.join(' · ');
+    };
+    const renderBoard = message => {
+      updateCombinationStatus();
+      riddleGrid.innerHTML = '';
+      riddleQuestions.forEach((_, index) => {
+        const solved = solvedRiddles.has(index);
+        const locked = index === 9 && !tenthUnlocked();
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = `riddle-card${solved ? ' is-solved' : ''}`;
+        card.disabled = locked;
+        card.innerHTML = `<strong>Reto ${index + 1}</strong><span>${locked ? 'Bloqueado' : solved ? '✓ Superado' : 'Resolver'}</span>`;
+        card.addEventListener('click', () => openRiddle(index));
+        riddleGrid.appendChild(card);
+      });
+      if (message) { riddleMilestone.innerHTML = message; riddleMilestone.hidden = false; } else riddleMilestone.hidden = true;
+    };
+    const showBoard = message => {
+      riddleBoard.hidden = false;
+      riddleDetail.hidden = true;
+      riddleFinal.hidden = true;
+      renderBoard(message);
+    };
+    const openRiddle = index => {
+      if (index === 9 && !tenthUnlocked()) return;
+      currentRiddle = index;
+      const riddle = riddleQuestions[index];
+      riddleBoard.hidden = true;
+      riddleFinal.hidden = true;
+      riddleDetail.hidden = false;
+      riddleTitle.textContent = `Reto ${index + 1}`;
+      riddleQuestion.innerHTML = `${riddle.question}${riddle.series ? `<span class="riddle-series">${riddle.series}</span>` : ''}${riddle.diagram ? `<img class="riddle-diagram" src="${riddle.diagram}" alt="${riddle.diagramAlt || 'Ilustración del reto'}">` : ''}`;
+      riddleAnswer.value = '';
+      riddleAnswer.disabled = false;
+      riddleSubmit.disabled = false;
+      riddleFeedback.textContent = '';
+      window.setTimeout(() => riddleAnswer.focus(), 80);
+    };
+    document.querySelector('#enigma-enter').addEventListener('click', () => { enigmaIntro.hidden = true; riddleStage.hidden = false; showBoard(); });
+    const checkRiddle = () => {
+      const answer = normaliseAnswer(riddleAnswer.value);
+      const riddle = riddleQuestions[currentRiddle];
+      if (!answer) { riddleFeedback.textContent = 'Escribe una respuesta para continuar.'; return; }
+      riddleAnswer.disabled = true;
+      riddleSubmit.disabled = true;
+      riddleFeedback.classList.add('is-checking');
+      riddleFeedback.textContent = 'Comprobando…';
+      window.setTimeout(() => {
+        riddleFeedback.classList.remove('is-checking');
+        const correct = riddle.answers.some(validAnswer => answer === validAnswer || (validAnswer.length > 2 && answer.includes(validAnswer)));
+        if (!correct) { riddleFeedback.textContent = 'No es correcto. ¡Inténtalo de nuevo!'; riddleAnswer.disabled = false; riddleSubmit.disabled = false; riddleAnswer.focus(); riddleAnswer.select(); return; }
+        const wasNewSolution = !solvedRiddles.has(currentRiddle);
+        solvedRiddles.add(currentRiddle);
+        if (currentRiddle === 9) {
+          riddleFeedback.textContent = '¡Correcto! Has recuperado los dos últimos dígitos.';
+          window.setTimeout(() => { riddleDetail.hidden = true; riddleFinal.hidden = false; }, 850);
+          return;
+        }
+        const solvedCount = solvedRiddles.size;
+        const milestone = wasNewSolution && solvedCount === 3 ? '¡Primera cifra recuperada!<b>6</b>' : wasNewSolution && solvedCount === 9 ? '¡Segunda cifra recuperada!<b>7</b>' : '';
+        riddleFeedback.textContent = '¡Correcto! Reto superado.';
+        window.setTimeout(() => showBoard(milestone), 850);
+      }, 650);
+    };
+    riddleSubmit.addEventListener('click', checkRiddle);
+    riddleAnswer.addEventListener('keydown', event => { if (event.key === 'Enter') checkRiddle(); });
+    riddleBack.addEventListener('click', () => showBoard());
+    document.querySelector('#riddle-final-back').addEventListener('click', () => showBoard());
+  </script>
+</body>
+</html>

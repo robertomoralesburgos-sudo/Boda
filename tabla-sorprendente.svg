@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 330" role="img" aria-labelledby="title desc">
+  <title id="title">Tabla de letras para formar sorprendente</title>
+  <desc id="desc">Una tabla de tres filas por cuatro columnas: R E N E; P S D T; R O E N.</desc>
+  <g fill="#F8F4EC" stroke="#6F7D66" stroke-width="3">
+    <rect x="70" y="35" width="75" height="75" rx="4"/><rect x="145" y="35" width="75" height="75" rx="4"/><rect x="220" y="35" width="75" height="75" rx="4"/><rect x="295" y="35" width="75" height="75" rx="4"/>
+    <rect x="70" y="110" width="75" height="75" rx="4"/><rect x="145" y="110" width="75" height="75" rx="4"/><rect x="220" y="110" width="75" height="75" rx="4"/><rect x="295" y="110" width="75" height="75" rx="4"/>
+    <rect x="70" y="185" width="75" height="75" rx="4"/><rect x="145" y="185" width="75" height="75" rx="4"/><rect x="220" y="185" width="75" height="75" rx="4"/><rect x="295" y="185" width="75" height="75" rx="4"/>
+  </g>
+  <g fill="#45413C" font-family="Cormorant Garamond, Georgia, serif" font-size="42" font-style="italic" text-anchor="middle" dominant-baseline="central">
+    <text x="107.5" y="72.5">R</text><text x="182.5" y="72.5">E</text><text x="257.5" y="72.5">N</text><text x="332.5" y="72.5">E</text>
+    <text x="107.5" y="147.5">P</text><text x="182.5" y="147.5">S</text><text x="257.5" y="147.5">D</text><text x="332.5" y="147.5">T</text>
+    <text x="107.5" y="222.5">R</text><text x="182.5" y="222.5">O</text><text x="257.5" y="222.5">E</text><text x="332.5" y="222.5">N</text>
+  </g>
+</svg>

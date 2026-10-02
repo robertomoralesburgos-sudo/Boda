@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" role="img" aria-labelledby="title desc">
+  <title id="title">Cubo abierto con números y letras</title>
+  <desc id="desc">Una red de cubo: dos, diez, S e interrogante en línea; siete invertido arriba de diez y E debajo.</desc>
+  <g fill="#F8F4EC" stroke="#6F7D66" stroke-width="3">
+    <rect x="55" y="140" width="100" height="100" rx="4"/>
+    <rect x="155" y="140" width="100" height="100" rx="4"/>
+    <rect x="255" y="140" width="100" height="100" rx="4"/>
+    <rect x="355" y="140" width="100" height="100" rx="4"/>
+    <rect x="155" y="40" width="100" height="100" rx="4"/>
+    <rect x="155" y="240" width="100" height="100" rx="4"/>
+  </g>
+  <g fill="#45413C" font-family="Cormorant Garamond, Georgia, serif" font-size="53" font-style="italic" text-anchor="middle" dominant-baseline="central">
+    <text x="105" y="190">2</text>
+    <text x="205" y="190">10</text>
+    <text x="305" y="190">S</text>
+    <text x="405" y="190">?</text>
+    <text x="205" y="90" transform="rotate(180 205 90)">7</text>
+    <text x="205" y="290">E</text>
+  </g>
+</svg>
